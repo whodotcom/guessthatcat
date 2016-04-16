@@ -1,0 +1,366 @@
+<html>
+
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- this gives us jquery -->
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Lilita+One' rel='stylesheet' type='text/css'>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <!-- this is where we are going to put own JavaScript -->
+
+  <script>
+    function goToQuestion(number) {
+      if (number === 1) {
+        $('#start').hide();
+      } else {
+        $('#question' + (number - 1)).hide();
+      }
+      $('#question' + number).show()
+
+      $('#rightAnswer' + number).click(function() {
+        goToQuestion(number + 1);
+      });
+      $('#wrongAnswer' + number + '1').click(function() {
+        goToWrong(number)
+      });
+      $('#wrongAnswer' + number + '2').click(function() {
+        goToWrong(number)
+      });
+    };
+
+    function goToWrong(number) {
+      $('#question' + number).hide();
+      $('#wrong').show();
+      $("<p>You scored " + (number - 1) + ".</p>").insertAfter("#wrongtext");
+
+    };
+
+    function goToStart() {
+      $('#wrong').hide();
+      $('#start').show();
+    }
+
+    $('document').ready(function() {
+      $('#beginQuizbutton').click(function() {
+        goToQuestion(1);
+      });
+
+    });
+  </script>
+
+  <style>
+    body,
+    a:hover {}
+
+    body {
+      background-color: blue;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .centerify {
+      text-align: center;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .centerify-item {
+      flex: 1;
+    }
+
+    h1 {
+      color: white;
+      font-family: 'Lilita One';
+      font-size: 80px;
+    }
+
+    h5 {
+      color: white;
+      font-family: 'Lilita One';
+      font-size: 50px;
+    }
+
+    .wrong {
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="start">
+    <div class="container centerify">
+      <div class="centerify-item">
+
+        <img class="responsive-img" src="hackdfwcat.png">
+        <div class="row">
+        </div>
+
+        <div class="col s12 m4">
+          <p><a id="beginQuizbutton" class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Begin Quiz</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="question1" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+          <div class="row">
+            <div class="col s12">
+
+              <h5>Whats the Answer?</h5>
+
+            </div>
+
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+          <a id='rightAnswer1' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+          <a id='wrongAnswer11' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>TOOPÉ</a>
+          <a id='wrongAnswer12' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>TOOPÉ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="question2" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+     
+
+          <a id='wrongAnswer21' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>VOOP</a>
+          <a id='wrongAnswer22' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>BOOP</a>
+          <a id='rightAnswer2' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="question3" style="display: none">
+      <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+          <a id='wrongAnswer31' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>PROP</a>
+          <a id='rightAnswer3' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+          <a id='wrongAnswer32' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>LOPÉ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="question4" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+
+          <a id='rightAnswer4' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+          <a id='wrongAnswer41' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>LOOP</a>
+          <a id='wrongAnswer42' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>POOPÉ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="question5" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+
+          <a id='wrongAnswer52' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>BOOP</a>
+          <a id='rightAnswer5' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+          <a id='wrongAnswer51' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>BOOPÉ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="question6" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+
+          <a id='wrongAnswer61' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>COOP</a>
+          <a id='wrongAnswer62' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>LOOP</a>
+          <a id='rightAnswer6' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="question7" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+
+          <a id='rightAnswer7' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+          <a id='wrongAnswer71' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>LOOP</a>
+          <a id='wrongAnswer72' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>TOOPÉ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="question8" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+
+          <a id='wrongAnswer82' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>gOOP</a>
+          <a id='rightAnswer8' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+          <a id='wrongAnswer81' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>KOOPÉ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="question9" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+
+          <a id='wrongAnswer92' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>POOP</a>
+          <a id='wrongAnswer91' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>BOOP</a>
+          <a id='rightAnswer9' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="question10" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+    <div class="row">
+
+      <div class="row">
+        <div class="col s12">
+          <h5>Whats the Answer?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m4">
+
+
+          <a id='wrongAnswer101' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>POOP</a>
+          <a id='wrongAnswer102' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>BOOP</a>
+          <a id='rightAnswer10' class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>R</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div id="wrong" style="display: none">
+    <div class="container centerify">
+      <div class="centerify-item">
+
+        <img class="responsive-img" src="Untitled-1ww.png">
+
+        <div class="row">
+          <div class="col s12">
+            <div id="wrongtext">
+              <h1>WRONG</h1>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+</body>
+
+</html>
