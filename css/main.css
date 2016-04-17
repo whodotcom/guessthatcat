@@ -1,0 +1,33 @@
+body, a:hover {}
+body {
+  background-color: #FFAC9A;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.centerify {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.centerify-item {
+  flex: 1;
+}
+h1 {
+  color: white;
+  font-family: 'Lilita One';
+  font-size: 80px;
+}
+h5 {
+  color: white;
+  font-family: 'Lilita One';
+  font-size: 50px;
+}
+.wrong {
+  color: white;
+}
+p {
+  color: white;
+}
